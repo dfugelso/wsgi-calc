@@ -98,10 +98,10 @@ def application(environ, start_response):
                 response_body = result_format.format (op1, symbol, op2, val)         
             except ValueError:
                 status = '400 Bad Request'
-                response_body = 'Operand error'        
+                response_body = 'Bad Request'
         else:
             status = '404 Not Found'
-            response_body = 'Operand ({}) is unsupported'.format(operands[0])   
+            response_body = 'Page not found'   
     except:
         #Yes, catching any and all exceptions here.
         status = '500 Internal Server Error'
